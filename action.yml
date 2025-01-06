@@ -94,12 +94,6 @@ runs:
         options: ${{ inputs.options }}
         spec_options: ${{ inputs.spec_options }}
     
-    - name: Checkout repository
-      uses: actions/checkout@v4
-      with:
-        clean: ${{ inputs.clean_checkout }}
-        lfs: ${{ inputs.lfs }}
-    
     - name: (Install) dependencies
       if: inputs.requirements != ''
       run: python -m pip install -r "${{ inputs.requirements }}"
